@@ -83,6 +83,10 @@ router.post('/common/get_wste_appearance', function (req, res, next) {
 	postApi('sp_req_b_wste_appearance',null ,res)
 });
 
+router.post('/common/get_department', function (req, res, next) {
+	postApi('sp_req_b_department',null ,res)
+});
+
 router.post('/common/admin_login', function (req, res, next) {
 
 	let data = [req.body.params];
@@ -154,6 +158,14 @@ router.post('/common/renewalToken', function (req, res, next) {
 	// const jwtToken = await jwt.sign(inputParam)
 	// res.send({'token':jwtToken})
 
+});
+
+router.post('/common/triggers', function (req, res, next) {
+	postApi('sp_req_b_department',null ,res)
+});
+
+router.post('/common/get_site_registered_lists', function (req, res, next) {
+	postApi('sp_retrieve_site_registered_lists',null ,res)
 });
 
 module.exports = router;

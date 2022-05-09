@@ -10,7 +10,7 @@ const DB_INFO = {
 	host    			: 'aaf2aamu92cvf4.cthuqtxb1hrh.ap-northeast-2.rds.amazonaws.com',
 	user    			: 'chiumdb',
 	password			: 'cldna2021!',
-	database			: 'chiumdev_2',
+	database			: 'chium',
 	multipleStatements	: true,
 	connectionLimit		: 100,
 	waitForConnections	: false
