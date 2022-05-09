@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@rodrigogs/mysql-events": "^0.6.0",
     "aws-sdk": "^2.1124.0",
     "bcrypt": "^5.0.1",
     "bluebird": "^3.7.2",
