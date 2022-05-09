@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const jwtFromModule = require('../modules/jwt.js')
-const { secretKey } = require('../config/secretkey')
+const { secretKey } = require('../config/secretKey')
 
 
 const checkToken = async function(req,res,next){

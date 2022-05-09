@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cors = require('cors')
 const checkToken = require('./middlewares/auth')
 var adminRouter = require('./router/admin');
-const { secretKey } = require('./config/secretkey')
+const { secretKey } = require('./config/secretKey')
 // const fileupload = require('express-fileupload')
 var app = express();
 var corsOptions = {
@@ -17,9 +17,11 @@ var corsOptions = {
 }
 
 
-
-
-
+app.use(cors(corsOptions));
+app.use(cors());
+app.use(require('connect-history-api-fallback')());
+app.use(express.static('dist'));
+app.use(cors());
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
@@ -37,21 +39,13 @@ app.use(session({
 	}
 }))
 
-
-
-app.get('/', (req,res)=>{
-	res.send('welcome to home ✈')
-	req.sessionStore.all((err,session)=>{
-		console.log(session)
-	})
-})
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(fileupload())
-app.use(cors(corsOptions));
+
 
 app.use(checkToken);
 app.use('/api/admin', adminRouter);
