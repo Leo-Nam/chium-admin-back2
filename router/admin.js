@@ -164,8 +164,9 @@ router.post('/common/triggers', function (req, res, next) {
 	postApi('sp_req_b_department',null ,res)
 });
 
-router.post('/common/get_site_registered_lists', function (req, res, next) {
-	postApi('sp_retrieve_site_registered_lists',null ,res)
+router.post('/common/get_stats', function (req, res, next) {
+	let data = [ req.body.params ];
+	postApi('sp_admin_retrieve_stat_registeration',data ,res)
 });
 
 module.exports = router;
