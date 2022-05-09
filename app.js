@@ -10,11 +10,11 @@ const { secretKey } = require('./config/secretKey')
 // const fileupload = require('express-fileupload')
 var app = express();
 var corsOptions = {
-	"origin": "*",
-	"methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-	"preflightContinue": false,
-	"optionsSuccessStatus": 200,
-	"credential": true,
+   "origin": "*",
+   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+   "preflightContinue": false,
+   "optionsSuccessStatus": 200,
+   "credential": true,
 }
 
 require("dotenv").config();
@@ -42,7 +42,7 @@ app.use('/api/admin', adminRouter);
 app.set('view engine', 'ejs'); //'ejs'탬플릿을 엔진으로 한다.
 app.engine('html', require('ejs').renderFile);
 const handleListening = () => {
-	console.log("👀 server is listening on 3000 port🚀")
+   console.log("👀 server is listening on 3000 port🚀")
 }
 app.listen(3000, handleListening)
 module.exports = app;
