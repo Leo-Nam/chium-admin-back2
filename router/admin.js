@@ -169,4 +169,13 @@ router.post('/common/get_stats', function (req, res, next) {
 	postApi('sp_admin_retrieve_stat_registeration',data ,res)
 });
 
+router.post('/common/get_sido', function (req, res, next) {
+	postApi('sp_req_sido',null ,res)
+});
+
+router.post('/common/get_region_stats', function (req, res, next) {
+	let data = [ req.body.params ];
+	postApi('sp_admin_retrieve_stat_region',data ,res)
+});
+
 module.exports = router;
