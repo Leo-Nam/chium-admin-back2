@@ -1,10 +1,15 @@
 const express = require('express')
+const Promise = require('bluebird')
 const bcrypt = require('bcrypt')
+const router = express.Router()
 const { postApi } = require('../api.js')
 const jwt = require('../modules/jwt.js')
 const { s3Upload } = require('../s3')
+const fs = require('fs')
 const Pool = require('../pool')
 const multer = require('multer')
+const authUtil = require('../middlewares/auth')
+//const jwt = require('jsonwebtoken');
 
 let globalFilename
 const storage = multer.diskStorage({
@@ -17,9 +22,19 @@ const storage = multer.diskStorage({
     cb(null, `chium.${ext}`)
   },
 })
-
 const upload = multer({ storage: storage })
-const router = express.Router()
+router.get('/', (req, res) => {
+  res.send('welcome to home ✈')
+})
+router.post('/main', function (req, res, next) {
+  const pool = new Pool()
+
+  console.log(
+    '👀 👀 👀 👀 req.body.params.user_id --->',
+    req.body.params.user_id,
+    ' 👀 👀 👀 👀'
+  )
+})
 
 router.post('/1_01_main', async function (req, res, next) {
   let data = [req.body.params]
@@ -136,6 +151,12 @@ router.post(
     res.send(url)
   }
 )
+
+router.post('/common/renewalToken', function (req, res, next) {
+  // const userId = req.
+  // const jwtToken = await jwt.sign(inputParam)
+  // res.send({'token':jwtToken})
+})
 
 router.post('/common/triggers', function (req, res, next) {
   postApi('sp_req_b_department', null, res)
