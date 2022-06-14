@@ -37,4 +37,12 @@ router.post('/get_new_comings', commonController.get_new_comings)
 // 신규 배출 리스트에 대한 상세정보
 router.post('/get_new_comings_detail', commonController.get_new_comings_detail)
 
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+// Input Parameters
+// USER_ID(Number), B_CODE(String)
+router.post(
+  '/sp_get_site_list_whose_biz_areas_of_interest',
+  commonController.sp_get_site_list_whose_biz_areas_of_interest
+)
+
 module.exports = router

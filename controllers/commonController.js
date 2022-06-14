@@ -115,3 +115,9 @@ exports.get_new_comings_detail = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_get_new_comings_detail', data, res)
 }
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_get_site_list_whose_biz_areas_of_interest = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_get_site_list_whose_biz_areas_of_interest', data, res)
+}
