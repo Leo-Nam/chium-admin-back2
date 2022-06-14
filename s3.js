@@ -1,6 +1,5 @@
 const AWS = require('aws-sdk')
 const fs = require('fs')
-require('dotenv').config({ path: __dirname + '\\' + '.env' })
 var path = require('path')
 
 const s3 = new AWS.S3({
@@ -28,7 +27,7 @@ const s3Upload = async function (image) {
       console.log(err)
     }
   })
-  return `https://chium.s3.ap-northeast-2.amazonaws.com/temp/admin-${timestampSecond}${ext}`
+  return `https://chium-admin.s3.ap-northeast-2.amazonaws.com/temp/admin-${timestampSecond}${ext}`
 }
 
 module.exports = {

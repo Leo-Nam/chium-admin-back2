@@ -5,12 +5,17 @@ const Promise = require('bluebird')
 Promise.promisifyAll(mysql)
 Promise.promisifyAll(require('mysql/lib/Connection').prototype)
 Promise.promisifyAll(require('mysql/lib/Pool').prototype)
-
+console.log(
+  process.env.SQLHOST,
+  process.env.SQLUSER,
+  process.env.SQLPWD,
+  process.env.SQLDB
+)
 const DB_INFO = {
-  host: 'aaf2aamu92cvf4.cthuqtxb1hrh.ap-northeast-2.rds.amazonaws.com',
-  user: 'chiumdb',
-  password: 'cldna2021!',
-  database: 'chium',
+  host: process.env.SQLHOST,
+  user: process.env.SQLUSER,
+  password: process.env.SQLPWD,
+  database: process.env.SQLDB,
   multipleStatements: true,
   connectionLimit: 100,
   waitForConnections: false,

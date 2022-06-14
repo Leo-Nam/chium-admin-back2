@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -5,7 +6,6 @@ const logger = require('morgan')
 const cors = require('cors')
 const checkToken = require('./middlewares/auth')
 const adminRouter = require('./router/admin')
-const { secretKey } = require('./config/secretKey')
 const routes = require('./router')
 
 const app = express()
