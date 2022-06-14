@@ -12,8 +12,8 @@ const s3Upload = async function (image) {
   timestampSecond = Math.floor(+new Date() / 1000)
   const ext = path.extname(image)
   let param = {
-    Bucket: 'chium',
-    Key: `temp/admin-${timestampSecond}` + ext,
+    Bucket: 'chium-admin',
+    Key: `images/admin-${timestampSecond}` + ext,
     ACL: 'public-read',
     Body: fs.createReadStream(image),
     ContentType: 'image/png',
@@ -27,7 +27,7 @@ const s3Upload = async function (image) {
       console.log(err)
     }
   })
-  return `https://chium-admin.s3.ap-northeast-2.amazonaws.com/temp/admin-${timestampSecond}${ext}`
+  return `https://chium-admin.s3.ap-northeast-2.amazonaws.com/images/admin-${timestampSecond}${ext}`
 }
 
 module.exports = {
