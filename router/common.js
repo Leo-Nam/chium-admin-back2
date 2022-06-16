@@ -45,4 +45,11 @@ router.post(
   commonController.sp_get_site_list_whose_biz_areas_of_interest
 )
 
+// 오더 관련 정보를 수정한다.
+// Parameters
+// type(string), key(string), value(string)
+router.post(
+  '/sp_admin_update_order_info',
+  commonController.sp_admin_update_order_info
+)
 module.exports = router
