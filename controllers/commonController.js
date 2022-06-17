@@ -127,3 +127,15 @@ exports.sp_admin_update_order_info = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_update_order_info', data, res)
 }
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_get_site_list_inside_range = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_get_site_list_inside_range', data, res)
+}
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_get_personal_details = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_admin_get_personal_details', data, res)
+}

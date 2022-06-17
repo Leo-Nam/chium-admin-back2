@@ -52,4 +52,15 @@ router.post(
   '/sp_admin_update_order_info',
   commonController.sp_admin_update_order_info
 )
+
+router.post(
+  '/sp_get_site_list_inside_range',
+  commonController.sp_get_site_list_inside_range
+)
+
+router.post(
+  '/sp_admin_get_personal_details',
+  commonController.sp_admin_get_personal_details
+)
+
 module.exports = router
