@@ -63,4 +63,19 @@ router.post(
   commonController.sp_admin_get_personal_details
 )
 
+router.post(
+  '/sp_admin_update_personal_details',
+  commonController.sp_admin_update_personal_details
+)
+
+router.post(
+  '/sp_admin_get_new_biddings',
+  commonController.sp_admin_get_new_biddings
+)
+
+router.post(
+  '/sp_admin_get_new_bidding_details',
+  commonController.sp_admin_get_new_bidding_details
+)
+
 module.exports = router
