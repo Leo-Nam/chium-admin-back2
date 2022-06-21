@@ -160,3 +160,24 @@ exports.sp_admin_get_new_bidding_details = (req, res, next) => {
   console.log(data, '=====>data')
   postApi('sp_admin_get_new_bidding_details', data, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_update_bidding_details = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_update_bidding_details', data, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_get_new_transactions = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_get_new_transactions', data, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_get_new_transaction_details = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_get_new_transaction_details', data, res)
+}
