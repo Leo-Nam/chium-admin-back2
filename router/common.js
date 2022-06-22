@@ -93,4 +93,14 @@ router.post(
   commonController.sp_admin_get_new_transaction_details
 )
 
+router.post(
+  '/sp_admin_update_order_details',
+  commonController.sp_admin_update_order_details
+)
+
+router.post(
+  '/sp_admin_get_new_reports',
+  commonController.sp_admin_get_new_reports
+)
+
 module.exports = router
