@@ -103,4 +103,16 @@ router.post(
   commonController.sp_admin_get_new_reports
 )
 
+router.post(
+  '/sp_admin_get_new_report_details',
+  commonController.sp_admin_get_new_report_details
+)
+
+router.post(
+  '/sp_admin_update_report_details',
+  commonController.sp_admin_update_report_details
+)
+
+router.post('/sp_admin_get_new_logs', commonController.sp_admin_get_new_logs)
+
 module.exports = router
