@@ -216,3 +216,17 @@ exports.sp_admin_get_new_logs = (req, res, next) => {
   console.log(data, '=====>data')
   postApi('sp_admin_get_new_logs', data, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_insert_note = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_insert_note', data, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_get_prospective_site_list_inside_range = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_get_prospective_site_list_inside_range', data, res)
+}

@@ -115,4 +115,11 @@ router.post(
 
 router.post('/sp_admin_get_new_logs', commonController.sp_admin_get_new_logs)
 
+router.post('/sp_admin_insert_note', commonController.sp_admin_insert_note)
+
+router.post(
+  '/sp_get_prospective_site_list_inside_range',
+  commonController.sp_get_prospective_site_list_inside_range
+)
+
 module.exports = router
