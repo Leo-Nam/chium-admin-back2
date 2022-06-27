@@ -122,4 +122,14 @@ router.post(
   commonController.sp_get_prospective_site_list_inside_range
 )
 
+router.post(
+  '/sp_admin_retrieve_prospective_site_lists',
+  commonController.sp_admin_retrieve_prospective_site_lists
+)
+
+router.post(
+  '/sp_admin_retrieve_prospective_site_info',
+  commonController.sp_admin_retrieve_prospective_site_info
+)
+
 module.exports = router
