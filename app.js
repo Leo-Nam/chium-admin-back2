@@ -38,7 +38,7 @@ const handleListening = () => {
   if (process.send) {
     process.send('ready')
   }
-  console.log('👀 server is listening on 3000 port🚀')
+  console.log('👀 server is listening on 3000 port🚀 111')
 }
 const serverListener = app.listen(3000, handleListening)
 process.on('SIGINT', function () {
