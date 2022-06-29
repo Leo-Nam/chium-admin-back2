@@ -244,3 +244,24 @@ exports.sp_admin_retrieve_prospective_site_info = (req, res, next) => {
   console.log(data, '=====>data')
   postApi('sp_admin_retrieve_prospective_site_info', data, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_get_note_lists = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_get_note_lists', data, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_get_note_details = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_get_note_details', data, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_update_note = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_update_note', data, res)
+}

@@ -132,4 +132,16 @@ router.post(
   commonController.sp_admin_retrieve_prospective_site_info
 )
 
+router.post(
+  '/sp_admin_get_note_lists',
+  commonController.sp_admin_get_note_lists
+)
+
+router.post(
+  '/sp_admin_get_note_details',
+  commonController.sp_admin_get_note_details
+)
+
+router.post('/sp_admin_update_note', commonController.sp_admin_update_note)
+
 module.exports = router
