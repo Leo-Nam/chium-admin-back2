@@ -85,16 +85,16 @@ exports.triggers = (req, res, next) => {
   postApi('sp_req_b_department', null, res)
 }
 
-exports.get_stats = (req, res, next) => {
+exports.sp_admin_retrieve_stat_registeration = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_retrieve_stat_registeration', data, res)
 }
 
-exports.get_sido = (req, res, next) => {
+exports.sp_req_sido = (req, res, next) => {
   postApi('sp_req_sido', null, res)
 }
 
-exports.get_region_stats = (req, res, next) => {
+exports.sp_admin_retrieve_stat_region = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_retrieve_stat_region', data, res)
 }
@@ -264,4 +264,16 @@ exports.sp_admin_update_note = (req, res, next) => {
   let data = [req.body.params]
   console.log(data, '=====>data')
   postApi('sp_admin_update_note', data, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_req_b_department = (req, res, next) => {
+  postApi('sp_req_b_department', null, res)
+}
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_insert_manager = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_insert_manager', data, res)
 }

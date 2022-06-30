@@ -61,12 +61,15 @@ router.post('/1_03_main/get_permits', function (req, res, next) {
   postApi('sp_admin_retrieve_site_lists', data, res)
 })
 
-router.post('/1_03_main/get_site_info', function (req, res, next) {
-  let data = [req.body.params]
-  postApi('sp_admin_retrieve_site_info', data, res)
-})
+router.post(
+  '/1_03_main/sp_admin_retrieve_site_info',
+  function (req, res, next) {
+    let data = [req.body.params]
+    postApi('sp_admin_retrieve_site_info', data, res)
+  }
+)
 
-router.post('/1_03_main/update_site_info', function (req, res, next) {
+router.post('/1_03_main/sp_admin_update_site_info', function (req, res, next) {
   let data = [req.body.params]
   postApi('sp_admin_update_site_info', data, res)
 })
@@ -162,16 +165,19 @@ router.post('/common/triggers', function (req, res, next) {
   postApi('sp_req_b_department', null, res)
 })
 
-router.post('/common/get_stats', function (req, res, next) {
-  let data = [req.body.params]
-  postApi('sp_admin_retrieve_stat_registeration', data, res)
-})
+router.post(
+  '/common/sp_admin_retrieve_stat_registeration',
+  function (req, res, next) {
+    let data = [req.body.params]
+    postApi('sp_admin_retrieve_stat_registeration', data, res)
+  }
+)
 
 router.post('/common/get_sido', function (req, res, next) {
   postApi('sp_req_sido', null, res)
 })
 
-router.post('/common/get_region_stats', function (req, res, next) {
+router.post('/common/sp_admin_retrieve_stat_region', function (req, res, next) {
   let data = [req.body.params]
   postApi('sp_admin_retrieve_stat_region', data, res)
 })

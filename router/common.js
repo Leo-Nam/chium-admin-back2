@@ -28,9 +28,15 @@ router.post(
   commonController.upload_img_to_s3
 )
 router.post('/triggers', commonController.triggers)
-router.post('/get_stats', commonController.get_stats)
-router.post('/get_sido', commonController.get_sido)
-router.post('/get_region_stats', commonController.get_region_stats)
+router.post(
+  '/sp_admin_retrieve_stat_registeration',
+  commonController.sp_admin_retrieve_stat_registeration
+)
+router.post('/sp_req_sido', commonController.sp_req_sido)
+router.post(
+  '/sp_admin_retrieve_stat_region',
+  commonController.sp_admin_retrieve_stat_region
+)
 
 // 신규 배출 리스트
 router.post('/get_new_comings', commonController.get_new_comings)
@@ -143,5 +149,12 @@ router.post(
 )
 
 router.post('/sp_admin_update_note', commonController.sp_admin_update_note)
+
+router.post('/sp_req_b_department', commonController.sp_req_b_department)
+
+router.post(
+  '/sp_admin_insert_manager',
+  commonController.sp_admin_insert_manager
+)
 
 module.exports = router
