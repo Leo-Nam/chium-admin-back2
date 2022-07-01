@@ -39,9 +39,15 @@ router.post(
 )
 
 // 신규 배출 리스트
-router.post('/get_new_comings', commonController.get_new_comings)
+router.post(
+  '/sp_admin_get_new_comings',
+  commonController.sp_admin_get_new_comings
+)
 // 신규 배출 리스트에 대한 상세정보
-router.post('/get_new_comings_detail', commonController.get_new_comings_detail)
+router.post(
+  '/sp_admin_get_new_comings_detail',
+  commonController.sp_admin_get_new_comings_detail
+)
 
 // 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
 // Input Parameters

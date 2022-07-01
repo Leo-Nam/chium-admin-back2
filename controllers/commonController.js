@@ -105,13 +105,13 @@ exports.get_rooms = (req, res, next) => {
 }
 
 // 신규 배출 리스트 가져오는 컨트롤러 ( db에 프로시저 요청 )
-exports.get_new_comings = (req, res, next) => {
+exports.sp_admin_get_new_comings = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_get_new_comings', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
-exports.get_new_comings_detail = (req, res, next) => {
+exports.sp_admin_get_new_comings_detail = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_get_new_comings_detail', data, res)
 }
