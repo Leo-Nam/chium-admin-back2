@@ -163,4 +163,9 @@ router.post(
   commonController.sp_admin_insert_manager
 )
 
+router.post(
+  '/sp_admin_get_disposer_schedule',
+  commonController.sp_admin_get_disposer_schedule
+)
+
 module.exports = router

@@ -277,3 +277,10 @@ exports.sp_admin_insert_manager = (req, res, next) => {
   console.log(data, '=====>data')
   postApi('sp_admin_insert_manager', data, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_get_disposer_schedule = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data, '=====>data')
+  postApi('sp_admin_get_disposer_schedule', data, res)
+}
