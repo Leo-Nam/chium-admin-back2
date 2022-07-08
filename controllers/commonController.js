@@ -264,28 +264,3 @@ exports.sp_admin_get_disposer_schedule = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_get_disposer_schedule', data, res)
 }
-
-// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
-// exports.server_notification = (req, res, next) => {
-//   res.writeHead(200, {
-//     'Content-Type': 'text/event-stream',
-//     'Cache-Control': 'no-cache',
-//     Connection: 'keep-alive',
-//   })
-//   console.log('listener.listener====>', listener.listener)
-//   //res.write(listener.listener)
-//   res.send()
-//   //countdown(res, 10)
-// }
-
-// function countdown(res, count) {
-//   res.write('data: ' + count + '\n\n')
-//   if (count) {
-//     setTimeout(() => {
-//       countdown(res, count - 1), 1000
-//       console.log(count)
-//     })
-//   } else {
-//     res.end()
-//   }
-// }

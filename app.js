@@ -7,7 +7,6 @@ const cors = require('cors')
 const checkToken = require('./middlewares/auth')
 const adminRouter = require('./router/admin')
 const routes = require('./router')
-const listener = require('./modules/listener')
 
 const app = express()
 const bodyParser = require('body-parser')

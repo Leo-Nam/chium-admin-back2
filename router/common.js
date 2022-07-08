@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const commonController = require('../controllers/commonController')
 const multer = require('multer')
-const listener = require('../modules/listener.js')
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads/')
@@ -168,31 +167,5 @@ router.post(
   '/sp_admin_get_disposer_schedule',
   commonController.sp_admin_get_disposer_schedule
 )
-
-router.get('/server_notification', (req, res) => {
-  console.log('hello server_notification')
-  res.writeHead(200, {
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    Connection: 'keep-alive',
-    'X-Accel-Buffering': no,
-  })
-  console.log('listener.listener====>')
-  //res.write(listener.listener)
-  countdown(res, 10)
-  res.send()
-})
-
-function countdown(res, count) {
-  res.write('data: ' + count + '\n\n')
-  if (count) {
-    setTimeout(() => {
-      countdown(res, count - 1), 1000
-      console.log(count)
-    })
-  } else {
-    res.end()
-  }
-}
 
 module.exports = router
