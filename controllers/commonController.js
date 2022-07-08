@@ -143,126 +143,108 @@ exports.sp_admin_get_personal_details = (req, res, next) => {
 // 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
 exports.sp_admin_update_personal_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_update_personal_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_biddings = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_biddings', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_bidding_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_bidding_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_update_bidding_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_update_bidding_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_transactions = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_transactions', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_transaction_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_transaction_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_update_order_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_update_order_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_reports = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_reports', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_report_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_report_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_update_report_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_update_report_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_new_logs = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_new_logs', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_insert_note = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_insert_note', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_get_prospective_site_list_inside_range = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_get_prospective_site_list_inside_range', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_retrieve_prospective_site_lists = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_retrieve_prospective_site_lists', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_retrieve_prospective_site_info = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_retrieve_prospective_site_info', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_note_lists = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_note_lists', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_note_details = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_note_details', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_update_note = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_update_note', data, res)
 }
 
@@ -274,13 +256,36 @@ exports.sp_req_b_department = (req, res, next) => {
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_insert_manager = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_insert_manager', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_admin_get_disposer_schedule = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data, '=====>data')
   postApi('sp_admin_get_disposer_schedule', data, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+// exports.server_notification = (req, res, next) => {
+//   res.writeHead(200, {
+//     'Content-Type': 'text/event-stream',
+//     'Cache-Control': 'no-cache',
+//     Connection: 'keep-alive',
+//   })
+//   console.log('listener.listener====>', listener.listener)
+//   //res.write(listener.listener)
+//   res.send()
+//   //countdown(res, 10)
+// }
+
+// function countdown(res, count) {
+//   res.write('data: ' + count + '\n\n')
+//   if (count) {
+//     setTimeout(() => {
+//       countdown(res, count - 1), 1000
+//       console.log(count)
+//     })
+//   } else {
+//     res.end()
+//   }
+// }

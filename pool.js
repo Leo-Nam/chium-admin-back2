@@ -5,12 +5,12 @@ const Promise = require('bluebird')
 Promise.promisifyAll(mysql)
 Promise.promisifyAll(require('mysql/lib/Connection').prototype)
 Promise.promisifyAll(require('mysql/lib/Pool').prototype)
-console.log(
-  process.env.SQLHOST,
-  process.env.SQLUSER,
-  process.env.SQLPWD,
-  process.env.SQLDB
-)
+// console.log(
+//   process.env.SQLHOST,
+//   process.env.SQLUSER,
+//   process.env.SQLPWD,
+//   process.env.SQLDB
+// )
 const DB_INFO = {
   host: process.env.SQLHOST,
   user: process.env.SQLUSER,

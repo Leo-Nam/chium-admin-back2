@@ -4,7 +4,7 @@ const MySQLEvents = require('@rodrigogs/mysql-events')
 const { nextTick } = require('vue')
 
 const BASE_URL = 'http://192.168.0.46:3000'
-console.log('BASE_URL====>', BASE_URL)
+
 const axiosPrivate = axios.create({
   baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' },
@@ -29,14 +29,22 @@ const program = async () => {
   await instance.start()
 
   instance.addTrigger({
+    name: 'CS_NOTE_AFTER_INSERT',
+    expression: '*',
+    statement: MySQLEvents.STATEMENTS.ALL,
+    onEvent: async (event) => {
+      // You will receive the events here
+      const response = await axiosPrivate.post('/common/triggers')
+    },
+  })
+
+  instance.addTrigger({
     name: 'JOB_LOG_AFTER_INSERT',
     expression: '*',
     statement: MySQLEvents.STATEMENTS.ALL,
     onEvent: async (event) => {
       // You will receive the events here
-      //   console.log('event >>>>>>>>>>>', event)
       const response = await axiosPrivate.post('/common/triggers')
-      console.log('event driven at', new Date(event.timestamp + 32400000))
     },
   })
 
@@ -46,13 +54,9 @@ const program = async () => {
 
 const listener = async () => {
   await program()
-    //.then(() => console.log('Waiting for database events...'))
-    .then(() => {
-      console.log('hello listener!!!')
-      return true
-    })
+    .then(() => console.log('Waiting for database events...'))
     .catch(console.error)
   //   next()
 }
-listener()
+//listener()
 module.exports = listener

@@ -29,11 +29,11 @@ router.get('/', (req, res) => {
 router.post('/main', function (req, res, next) {
   const pool = new Pool()
 
-  console.log(
-    '👀 👀 👀 👀 req.body.params.user_id --->',
-    req.body.params.user_id,
-    ' 👀 👀 👀 👀'
-  )
+  //   console.log(
+  //     '👀 👀 👀 👀 req.body.params.user_id --->',
+  //     req.body.params.user_id,
+  //     ' 👀 👀 👀 👀'
+  //   )
 })
 
 router.post('/1_01_main', async function (req, res, next) {
