@@ -13,6 +13,10 @@ exports.get_wste_lists = (req, res, next) => {
   postApi('sp_req_b_wste_code', null, res)
 }
 
+exports.sp_req_b_wste_class_code = (req, res, next) => {
+  postApi('sp_req_b_wste_class_code', null, res)
+}
+
 exports.get_wste_appearance = (req, res, next) => {
   postApi('sp_req_b_wste_appearance', null, res)
 }

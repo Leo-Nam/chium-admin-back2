@@ -17,6 +17,10 @@ const upload = multer({ storage: storage })
 router.post('/get_admin_decision', commonController.get_admin_decision)
 
 router.post('/get_wste_lists', commonController.get_wste_lists)
+router.post(
+  '/sp_req_b_wste_class_code',
+  commonController.sp_req_b_wste_class_code
+)
 
 router.post('/get_wste_appearance', commonController.get_wste_appearance)
 router.post('/get_department', commonController.get_department)
