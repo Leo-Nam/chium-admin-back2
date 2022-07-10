@@ -12,6 +12,7 @@ exports.sp_admin_retrieve_site_info = (req, res, next) => {
 
 exports.sp_admin_update_site_info = (req, res, next) => {
   let data = [req.body.params]
+  console.log(data)
   postApi('sp_admin_update_site_info', data, res)
 }
 

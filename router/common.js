@@ -172,4 +172,11 @@ router.post(
   commonController.sp_admin_get_disposer_schedule
 )
 
+router.post('/sp_req_b_trmt_biz', commonController.sp_req_b_trmt_biz)
+
+router.post(
+  '/sp_admin_update_prospective_member_info',
+  commonController.sp_admin_update_prospective_member_info
+)
+
 module.exports = router

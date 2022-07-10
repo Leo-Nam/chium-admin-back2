@@ -14,6 +14,9 @@ const postApi = function (address, data, res) {
           message: rows[0][0]['msg_txt'],
           data: JSON.parse(rows[0][0]['json_data']),
         }
+        if (address === 'sp_admin_update_prospective_member_info') {
+          console.log(payload)
+        }
         res.send(payload)
       }
     })

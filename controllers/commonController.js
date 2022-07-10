@@ -268,3 +268,14 @@ exports.sp_admin_get_disposer_schedule = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_get_disposer_schedule', data, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_req_b_trmt_biz = (req, res, next) => {
+  postApi('sp_req_b_trmt_biz', null, res)
+}
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_update_prospective_member_info = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_admin_update_prospective_member_info', data, res)
+}
