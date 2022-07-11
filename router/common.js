@@ -179,4 +179,9 @@ router.post(
   commonController.sp_admin_update_prospective_member_info
 )
 
+router.post(
+  '/sp_admin_get_question_lists',
+  commonController.sp_admin_get_question_lists
+)
+
 module.exports = router

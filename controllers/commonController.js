@@ -279,3 +279,9 @@ exports.sp_admin_update_prospective_member_info = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_update_prospective_member_info', data, res)
 }
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_get_question_lists = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_admin_get_question_lists', data, res)
+}
