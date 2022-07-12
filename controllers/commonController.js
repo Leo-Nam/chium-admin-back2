@@ -285,3 +285,21 @@ exports.sp_admin_get_question_lists = (req, res, next) => {
   let data = [req.body.params]
   postApi('sp_admin_get_question_lists', data, res)
 }
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_retrieve_stat_registeration_daily = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_admin_retrieve_stat_registeration_daily', data, res)
+}
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_get_version_list = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_admin_get_version_list', data, res)
+}
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_insert_version_info = (req, res, next) => {
+  let data = [req.body.params]
+  postApi('sp_admin_insert_version_info', data, res)
+}

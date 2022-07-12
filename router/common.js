@@ -184,4 +184,19 @@ router.post(
   commonController.sp_admin_get_question_lists
 )
 
+router.post(
+  '/sp_admin_retrieve_stat_registeration_daily',
+  commonController.sp_admin_retrieve_stat_registeration_daily
+)
+
+router.post(
+  '/sp_admin_get_version_list',
+  commonController.sp_admin_get_version_list
+)
+
+router.post(
+  '/sp_admin_insert_version_info',
+  commonController.sp_admin_insert_version_info
+)
+
 module.exports = router
