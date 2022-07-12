@@ -25,6 +25,31 @@ exports.get_department = (req, res, next) => {
   postApi('sp_req_b_department', null, res)
 }
 
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_admin_insert_manager = (req, res, next) => {
+  let data = JSON.parse([req.body.params])
+  pw = data[0]['PASSWORD']
+
+  console.log('[req.body.params]>>>>>>', [req.body.params])
+  console.log('req.body.params>>>>>>', req.body.params)
+  console.log('pw>>>>>>', pw)
+  const encryptedPW = bcrypt.hashSync(pw, 10)
+  console.log('encryptedPW>>>>>>', encryptedPW)
+  inputData = [
+    {
+      NAME: data[0]['NAME'],
+      CLASS: data[0]['CLASS'],
+      DEPARTMENT: data[0]['DEPARTMENT'],
+      USER_ID: data[0]['USER_ID'],
+      PASSWORD: encryptedPW,
+      PHONE: data[0]['PHONE'],
+    },
+  ]
+  console.log([req.body.params])
+  console.log([JSON.stringify(inputData)])
+  postApi('sp_admin_insert_manager', [JSON.stringify(inputData)], res)
+}
+
 exports.admin_login = (req, res, next) => {
   let data = [req.body.params]
   let inputParam = JSON.parse(data)[0]
@@ -49,8 +74,13 @@ exports.admin_login = (req, res, next) => {
         } else {
           let id = json_data.ID
           let pw = json_data.PWD
-
+          console.log(inputParam.PW, pw)
           const pwOk = await bcrypt.compare(inputParam.PW, pw)
+
+          const encryptedPW = bcrypt.hashSync(inputParam.PW, 10)
+          console.log('encryptedPW>>>>>>', encryptedPW)
+
+          console.log('pwOk >>>', pwOk)
           if (pwOk === true) {
             const jwtToken = await jwt.sign(inputParam)
             console.log('JWT issued user login :', jwtToken)
@@ -255,12 +285,6 @@ exports.sp_admin_update_note = (req, res, next) => {
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_req_b_department = (req, res, next) => {
   postApi('sp_req_b_department', null, res)
-}
-
-// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
-exports.sp_admin_insert_manager = (req, res, next) => {
-  let data = [req.body.params]
-  postApi('sp_admin_insert_manager', data, res)
 }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
