@@ -50,7 +50,61 @@ exports.sp_admin_insert_manager = (req, res, next) => {
   postApi('sp_admin_insert_manager', [JSON.stringify(inputData)], res)
 }
 
+exports.sp_admin_init_user = (req, res, next) => {
+  let data = [req.body.params]
+  let inputParamId = JSON.parse(data)[0]['ADMIN_ID']
+  let inputParamUid = JSON.parse(data)[0]['ADMIN_UID']
+  let inputParamPw = JSON.parse(data)[0]['PWD']
+
+  const encryptedPW = bcrypt.hashSync(inputParamPw, 10)
+  const inputParam = [
+    JSON.stringify([
+      {
+        ADMIN_ID: inputParamId,
+        ADMIN_UID: inputParamUid,
+        PWD: encryptedPW,
+      },
+    ]),
+  ]
+  console.log('data>>>>>>', data)
+  console.log('data>>>>>>', inputParam)
+
+  let address = 'sp_admin_init_user'
+  const pool = new Pool()
+  var sql = `CALL ${address}(?)`
+  if (data == null) sql = `CALL ${address}()`
+  pool.execute((conn) => {
+    conn.queryAsync(sql, inputParam, async (error, rows) => {
+      if (error) {
+        return console.error(error.message)
+      } else {
+        let json_data = JSON.parse(rows[0][0]['json_data'])
+        if (json_data === null) {
+          const payload = {
+            state: rows[0][0]['rtn_val'],
+            message: rows[0][0]['msg_txt'],
+            data: null,
+          }
+          res.send(payload)
+        } else {
+          const jwtToken = await jwt.sign(inputParam)
+          console.log('JWT issued user login :', jwtToken)
+          const payload = {
+            state: rows[0][0]['rtn_val'],
+            message: rows[0][0]['msg_txt'],
+            data: rows[0][0]['json_data'],
+            token: jwtToken,
+          }
+          res.send(payload)
+        }
+      }
+    })
+    pool.end()
+  })
+}
+
 exports.admin_login = (req, res, next) => {
+  console.log('hello2')
   let data = [req.body.params]
   let inputParam = JSON.parse(data)[0]
 

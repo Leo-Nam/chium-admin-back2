@@ -199,4 +199,6 @@ router.post(
   commonController.sp_admin_insert_version_info
 )
 
+router.post('/sp_admin_init_user', commonController.sp_admin_init_user)
+
 module.exports = router
