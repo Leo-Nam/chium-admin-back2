@@ -201,4 +201,9 @@ router.post(
 
 router.post('/sp_admin_init_user', commonController.sp_admin_init_user)
 
+router.post(
+  '/sp_admin_get_current_background_theme',
+  commonController.sp_admin_get_current_background_theme
+)
+
 module.exports = router

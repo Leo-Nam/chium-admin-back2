@@ -14,7 +14,10 @@ const checkToken = async function (req, res, next) {
 
   // 토큰 없음
   if (token === 'null') {
-    if (req.url == '/api/admin/common/admin_login') {
+    if (
+      req.url == '/api/admin/common/admin_login' ||
+      req.url == '/api/admin/common/sp_admin_get_current_background_theme'
+    ) {
       next()
       return
     }
