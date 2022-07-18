@@ -206,4 +206,6 @@ router.post(
   commonController.sp_admin_get_current_background_theme
 )
 
+router.post('/sp_req_b_project_list', commonController.sp_req_b_project_list)
+
 module.exports = router
