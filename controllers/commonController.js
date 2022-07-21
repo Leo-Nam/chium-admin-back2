@@ -391,3 +391,10 @@ exports.sp_admin_get_current_background_theme = (req, res, next) => {
 exports.sp_req_b_project_list = (req, res, next) => {
   postApi('sp_req_b_project_list', null, res)
 }
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_update_admin_info = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data)
+  postApi('sp_admin_update_admin_info', data, res)
+}

@@ -208,4 +208,9 @@ router.post(
 
 router.post('/sp_req_b_project_list', commonController.sp_req_b_project_list)
 
+router.post(
+  '/sp_admin_update_admin_info',
+  commonController.sp_admin_update_admin_info
+)
+
 module.exports = router
