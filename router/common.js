@@ -225,4 +225,9 @@ router.post(
   commonController.sp_admin_update_admin_gender
 )
 
+router.post(
+  '/sp_admin_update_admin_email',
+  commonController.sp_admin_update_admin_email
+)
+
 module.exports = router
