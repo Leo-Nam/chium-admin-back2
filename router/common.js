@@ -235,4 +235,21 @@ router.post(
   commonController.sp_admin_update_admin_phone
 )
 
+router.post(
+  '/sp_admin_update_admin_loginid',
+  commonController.sp_admin_update_admin_loginid
+)
+
+router.post(
+  '/sp_admin_get_updated_at',
+  commonController.sp_admin_get_updated_at
+)
+
+router.post('/sp_req_b_resolution', commonController.sp_req_b_resolution)
+
+router.post(
+  '/sp_admin_update_resolution',
+  commonController.sp_admin_update_resolution
+)
+
 module.exports = router
