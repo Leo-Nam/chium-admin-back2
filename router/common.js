@@ -213,4 +213,16 @@ router.post(
   commonController.sp_admin_update_admin_info
 )
 
+router.post(
+  '/sp_admin_update_admin_birthday',
+  commonController.sp_admin_update_admin_birthday
+)
+
+router.post('/sp_req_b_genders', commonController.sp_req_b_genders)
+
+router.post(
+  '/sp_admin_update_admin_gender',
+  commonController.sp_admin_update_admin_gender
+)
+
 module.exports = router
