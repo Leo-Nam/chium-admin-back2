@@ -252,4 +252,15 @@ router.post(
   commonController.sp_admin_update_resolution
 )
 
+router.post(
+  '/uploadImageToS3',
+  upload.single('file'),
+  commonController.uploadImageToS3
+)
+
+router.post(
+  '/sp_admin_update_admin_avatar',
+  commonController.sp_admin_update_admin_avatar
+)
+
 module.exports = router

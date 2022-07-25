@@ -457,3 +457,19 @@ exports.sp_admin_update_resolution = (req, res, next) => {
   console.log(data)
   postApi('sp_admin_update_resolution', data, res)
 }
+
+exports.uploadImageToS3 = async (req, res, next) => {
+  let data = [req.body.params]
+  console.log('uploadImageToS3:data>>>>>>', data)
+  const forExt = req.file.originalname.split('.')
+  const ext = forExt[forExt.length - 1]
+  const url = await s3Upload(`./uploads/chium.${ext}`)
+  res.send(url)
+}
+
+// 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
+exports.sp_admin_update_admin_avatar = (req, res, next) => {
+  let data = [req.body.params]
+  console.log(data)
+  postApi('sp_admin_update_admin_avatar', data, res)
+}
