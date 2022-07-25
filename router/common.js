@@ -263,4 +263,8 @@ router.post(
   commonController.sp_admin_update_admin_avatar
 )
 
+router.post('/sp_req_b_sys_policy', commonController.sp_req_b_sys_policy)
+
+router.post('/sp_admin_change_policy', commonController.sp_admin_change_policy)
+
 module.exports = router
