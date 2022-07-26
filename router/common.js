@@ -267,4 +267,6 @@ router.post('/sp_req_b_sys_policy', commonController.sp_req_b_sys_policy)
 
 router.post('/sp_admin_change_policy', commonController.sp_admin_change_policy)
 
+router.post('/sp_req_b_cs_manager', commonController.sp_req_b_cs_manager)
+
 module.exports = router
