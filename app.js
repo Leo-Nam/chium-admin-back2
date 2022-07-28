@@ -13,6 +13,7 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const MySQLEvents = require('@rodrigogs/mysql-events')
 let timeStamp = null
+let globalCount = 0
 
 const program = async () => {
   const connection = mysql.createConnection({
@@ -39,6 +40,7 @@ const program = async () => {
       console.log('res2>>>>>', event.table)
       dbChanged = true
       timeStamp = Math.floor(Date.now())
+      globalCount++
       //   console.log('dbChanged in addTrigger>>>>>>', dbChanged)
     },
   })
@@ -56,21 +58,23 @@ const listener = async () => {
 }
 listener()
 
-const sendResponse = (res) => {
-  setTimeout(() => {
-    sendResponse(res)
-    // if (dbChanged) {
-    //   res.write('data: ' + dbChanged + `\n\n`)
-    //   console.log('after sendResponse', dbChanged)
-    // }
-    // res.write('data: ' + dbChanged + `\n\n`)
-    res.write('data: ' + timeStamp + `\n\n`)
-    dbChanged = false
-  }, 5000)
-}
+// const sendResponse = (res) => {
+//   setTimeout(() => {
+//     sendResponse(res)
+//     // if (dbChanged) {
+//     //   res.write('data: ' + dbChanged + `\n\n`)
+//     //   console.log('after sendResponse', dbChanged)
+//     // }
+//     // res.write('data: ' + dbChanged + `\n\n`)
+//     res.write('data: ' + timeStamp + `\n\n`)
+//     dbChanged = false
+//   }, 5000)
+// }
 
 // let dbChangedOld = null
 app.get('/sse', (req, res) => {
+  let localCount = 0
+  console.log('sse service started.....')
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
     'Cache-Control': 'no-cache',
@@ -80,7 +84,15 @@ app.get('/sse', (req, res) => {
     'Access-Control-Allow-Credentials': true,
     Connection: 'keep-alive',
   })
-  sendResponse(res)
+  setInterval(() => {
+    if (localCount < globalCount) {
+      console.log('globalCount has increased....>>>>', globalCount)
+      res.status(200).write(`data: ${JSON.stringify(timeStamp)}\n\n`)
+      dbChanged = false
+      localCount = globalCount
+      console.log('localCount has set....>>>>', localCount)
+    }
+  }, 1000)
 })
 
 let isDisableKeepAlive = false
