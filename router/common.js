@@ -274,6 +274,6 @@ router.post(
   commonController.sp_req_b_last_modified_talbe
 )
 
-router.get('/sse', commonController.sse)
+// router.get('/sse', commonController.sse)
 
 module.exports = router

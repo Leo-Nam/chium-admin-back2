@@ -491,17 +491,17 @@ exports.sp_req_b_cs_manager = (req, res, next) => {
   postApi('sp_req_b_cs_manager', null, res)
 }
 
-exports.sse = (res, next) => {
-  console.log('sse started.....')
-  res.setHeader('Content-Type', 'text/event-stream')
-  send(res)
-}
+// exports.sse = (res, next) => {
+//   console.log('sse started.....')
+//   res.setHeader('Content-Type', 'text/event-stream')
+//   send(res)
+// }
 
-function send(res) {
-  console.log('server sent event to client....')
-  res.write('data: ' + `hello[${i++}] this is sse server!!!!!!!!!\n\n`)
-  setTimeout(() => send(res), 5000)
-}
+// function send(res) {
+//   console.log('server sent event to client....')
+//   res.write('data: ' + `hello[${i++}] this is sse server!!!!!!!!!\n\n`)
+//   setTimeout(() => send(res), 5000)
+// }
 
 // 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
 exports.sp_req_b_last_modified_talbe = (req, res, next) => {
