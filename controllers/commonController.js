@@ -490,3 +490,8 @@ exports.sp_admin_change_policy = (req, res, next) => {
 exports.sp_req_b_cs_manager = (req, res, next) => {
   postApi('sp_req_b_cs_manager', null, res)
 }
+
+// 신규 배출 리스트에 대한 상세 정보를 가져오는 컨트롤러 ( db에 프로시저 요청 )
+exports.sp_req_b_last_modified_talbe = (req, res, next) => {
+  postApi('sp_req_b_last_modified_talbe', null, res)
+}
