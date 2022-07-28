@@ -2,6 +2,7 @@ const mysql = require('mysql')
 const axios = require('axios')
 const MySQLEvents = require('@rodrigogs/mysql-events')
 const { nextTick } = require('vue')
+const app = require('express')()
 
 const BASE_URL = 'http://192.168.0.46:3000'
 
@@ -58,5 +59,5 @@ const listener = async () => {
     .catch(console.error)
   //   next()
 }
-//listener()
+listener()
 module.exports = listener

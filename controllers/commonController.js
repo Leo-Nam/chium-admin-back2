@@ -454,7 +454,7 @@ exports.sp_req_b_resolution = (req, res, next) => {
 // 배출자의 폐기물 배출지를 관심지역으로 하는 수거자 사이트 리스트 반환
 exports.sp_admin_update_resolution = (req, res, next) => {
   let data = [req.body.params]
-  console.log(data)
+  console.log('sp_admin_update_resolution>>>>', data)
   postApi('sp_admin_update_resolution', data, res)
 }
 
