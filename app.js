@@ -69,33 +69,33 @@ let timeStamp = null
 // }
 // listener()
 
-const sendResponse = (res) => {
-  setTimeout(() => {
-    sendResponse(res)
-    // if (dbChanged) {
-    //   res.write('data: ' + dbChanged + `\n\n`)
-    //   console.log('after sendResponse', dbChanged)
-    // }
-    // res.write('data: ' + dbChanged + `\n\n`)
-    res.write('data: ' + timeStamp + `\n\n`)
-    dbChanged = false
-  }, 5000)
-}
+// const sendResponse = (res) => {
+//   setTimeout(() => {
+//     sendResponse(res)
+//     // if (dbChanged) {
+//     //   res.write('data: ' + dbChanged + `\n\n`)
+//     //   console.log('after sendResponse', dbChanged)
+//     // }
+//     // res.write('data: ' + dbChanged + `\n\n`)
+//     res.write('data: ' + timeStamp + `\n\n`)
+//     dbChanged = false
+//   }, 5000)
+// }
 
-// let dbChangedOld = null
-app.get('/sse', (req, res) => {
-  res.writeHead(200, {
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Credentials': true,
-    'Content-Type': 'text/event-stream',
-    Connection: 'keep-alive',
-  })
-  sendResponse(res)
-})
+// // let dbChangedOld = null
+// app.get('/sse', (req, res) => {
+//   res.writeHead(200, {
+//     'Content-Type': 'text/event-stream',
+//     'Cache-Control': 'no-cache',
+//     'Access-Control-Allow-Origin': '*',
+//     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+//     'Access-Control-Allow-Headers': 'Content-Type',
+//     'Access-Control-Allow-Credentials': true,
+//     'Content-Type': 'text/event-stream',
+//     Connection: 'keep-alive',
+//   })
+//   sendResponse(res)
+// })
 
 let isDisableKeepAlive = false
 app.use(function (req, res, next) {
