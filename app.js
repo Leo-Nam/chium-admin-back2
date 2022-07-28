@@ -27,47 +27,47 @@ let timeStamp = null
 // //   withCredentials: true,
 // // })
 
-const program = async () => {
-  const connection = mysql.createConnection({
-    host: 'aaf2aamu92cvf4.cthuqtxb1hrh.ap-northeast-2.rds.amazonaws.com',
-    user: 'chiumdb',
-    password: 'cldna2021!',
-    database: 'chium',
-  })
+// const program = async () => {
+//   const connection = mysql.createConnection({
+//     host: 'aaf2aamu92cvf4.cthuqtxb1hrh.ap-northeast-2.rds.amazonaws.com',
+//     user: 'chiumdb',
+//     password: 'cldna2021!',
+//     database: 'chium',
+//   })
 
-  const instance = new MySQLEvents(connection, {
-    startAtEnd: true,
-    excludedSchemas: {
-      mysql: true,
-    },
-  })
+//   const instance = new MySQLEvents(connection, {
+//     startAtEnd: true,
+//     excludedSchemas: {
+//       mysql: true,
+//     },
+//   })
 
-  await instance.start()
+//   await instance.start()
 
-  instance.addTrigger({
-    name: 'JOB_LOG_AFTER_INSERT',
-    expression: '*',
-    statement: MySQLEvents.STATEMENTS.ALL,
-    onEvent: async (event) => {
-      console.log('res2>>>>>', event.table)
-      dbChanged = true
-      timeStamp = Math.floor(Date.now())
-      //   console.log('dbChanged in addTrigger>>>>>>', dbChanged)
-    },
-  })
+//   instance.addTrigger({
+//     name: 'JOB_LOG_AFTER_INSERT',
+//     expression: '*',
+//     statement: MySQLEvents.STATEMENTS.ALL,
+//     onEvent: async (event) => {
+//       console.log('res2>>>>>', event.table)
+//       dbChanged = true
+//       timeStamp = Math.floor(Date.now())
+//       //   console.log('dbChanged in addTrigger>>>>>>', dbChanged)
+//     },
+//   })
 
-  instance.on(MySQLEvents.EVENTS.CONNECTION_ERROR, console.error)
-  instance.on(MySQLEvents.EVENTS.ZONGJI_ERROR, console.error)
-}
+//   instance.on(MySQLEvents.EVENTS.CONNECTION_ERROR, console.error)
+//   instance.on(MySQLEvents.EVENTS.ZONGJI_ERROR, console.error)
+// }
 
-const listener = async () => {
-  await program()
-    .then(() => {
-      console.log('Waiting for database events...')
-    })
-    .catch(console.error)
-}
-listener()
+// const listener = async () => {
+//   await program()
+//     .then(() => {
+//       console.log('Waiting for database events...')
+//     })
+//     .catch(console.error)
+// }
+// listener()
 
 const sendResponse = (res) => {
   setTimeout(() => {
