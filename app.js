@@ -13,6 +13,11 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql')
 const MySQLEvents = require('@rodrigogs/mysql-events')
 let timeStamp = null
+let sseData = {
+  timestamp: null,
+  table: null,
+  type: null,
+}
 let globalCount = 0
 
 const program = async () => {
@@ -38,8 +43,9 @@ const program = async () => {
     statement: MySQLEvents.STATEMENTS.ALL,
     onEvent: async (event) => {
       console.log('res2>>>>>', event.table)
+      sseData = event
+      sseData.timestamp = Date.now()
       dbChanged = true
-      timeStamp = Date.now()
       globalCount++
       //   console.log('dbChanged in addTrigger>>>>>>', dbChanged)
     },
@@ -87,7 +93,7 @@ app.get('/sse', (req, res) => {
   setInterval(() => {
     if (localCount < globalCount) {
       console.log('globalCount has increased....>>>>', globalCount)
-      res.status(200).write(`data: ${JSON.stringify(timeStamp)}\n\n`)
+      res.status(200).write(`data: ${JSON.stringify(sseData)}\n\n`)
       dbChanged = false
       localCount = globalCount
       console.log('localCount has set....>>>>', localCount)
