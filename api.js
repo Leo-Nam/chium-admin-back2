@@ -1,5 +1,4 @@
 const Pool = require('./pool')
-const winstonLogger = require('./config/winston.js')
 
 const postApi = function (address, data, res) {
   const pool = new Pool()
@@ -8,7 +7,6 @@ const postApi = function (address, data, res) {
   pool.execute((conn) => {
     conn.queryAsync(sql, data, (error, rows) => {
       if (error) {
-        winstonLogger.error('postApi:', error.message)
         return console.error(error.message)
       } else {
         const payload = {
@@ -24,7 +22,6 @@ const postApi = function (address, data, res) {
     })
     pool.end()
   })
-  winstonLogger.info('GET /')
 }
 
 module.exports = {
