@@ -5,12 +5,14 @@ const winstonLogger = require('../config/winston.js')
 
 const checkToken = async function (req, res, next) {
   const token = req.headers.token
-
-  let userId = req.body.userId
-  if (userId) {
-    const token = await jwtFromModule.sign(userId)
-    res.send({ token: token })
-    return
+  console.log('req.url>>>', req.url)
+  if (req.url !== '/tracking') {
+    let userId = req.body.userId
+    if (userId) {
+      const token = await jwtFromModule.sign(userId)
+      res.send({ token: token })
+      return
+    }
   }
 
   // 토큰 없음
@@ -18,7 +20,8 @@ const checkToken = async function (req, res, next) {
     if (
       req.url == '/api/admin/common/admin_login' ||
       req.url == '/api/admin/common/sp_admin_get_current_background_theme' ||
-      req.url == '/'
+      req.url == '/' ||
+      req.url == '/tracking'
     ) {
       next()
       return

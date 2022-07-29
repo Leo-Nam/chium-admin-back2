@@ -274,4 +274,9 @@ router.post(
   commonController.sp_admin_get_last_modified_table
 )
 
+router.post(
+  '/sp_req_b_tracking_test_geo',
+  commonController.sp_req_b_tracking_test_geo
+)
+
 module.exports = router
