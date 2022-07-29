@@ -39,7 +39,7 @@ const program = async () => {
     onEvent: async (event) => {
       console.log('res2>>>>>', event.table)
       dbChanged = true
-      timeStamp = Math.floor(Date.now())
+      timeStamp = Date.now()
       globalCount++
       //   console.log('dbChanged in addTrigger>>>>>>', dbChanged)
     },
